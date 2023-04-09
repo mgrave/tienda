@@ -6,16 +6,16 @@ background: #f1ee51;
 color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
     <div class="col-12 text-center">
         ENVIO GRATIS POR COMPRAS MAYORES A
-        <span *ngIf="currency == 'PEN'">S/{{config.monto_min_soles}}</span>
-        <span *ngIf="currency != 'PEN'">${{config.monto_min_dolares}}</span>
+        <span *ngIf="currency == 'MXN'">S/{{config.monto_min_soles}}</span>
+        <span *ngIf="currency != 'MXN'">${{config.monto_min_dolares}}</span>
     </div>
 </div>
-<header class="header header--standard" data-sticky="true" style="    background: #127c5f !important;">
+<header class="header header--standard" data-sticky="true" style="    background: #eea6de !important;">
    
     <div class="header__left">
         <a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active">
         
-            <img src="https://i.postimg.cc/1zY1kcfX/logo-white.png" alt="" style="width:150px;">
+            <img src="https://res.cloudinary.com/dmuoqsv3b/image/upload/v1681058199/PhotoRoom-20230409_093218_bimuo4.png" alt="" style="width:150px;">
         </a>
     </div>
     <div class="header__right">
@@ -166,8 +166,8 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                   
                   <div class="ps-cart__footer">
                       <h3>Sub Total:<strong>
-                          <span *ngIf="currency != 'PEN'">${{subtotal}}</span>
-                          <span *ngIf="currency == 'PEN'">S/{{subtotal}}</span>
+                          <span *ngIf="currency != 'MXN'">${{subtotal}}</span>
+                          <span *ngIf="currency == 'MXN'">S/{{subtotal}}</span>
                       </strong></h3>
                         <figure  *ngIf="carrito_logout.length != 0">
                             <a class="ps-btn ps-btn--outline"  [routerLink]="['/carrito']">Carrito</a>

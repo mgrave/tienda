@@ -12,7 +12,7 @@ export class InicioComponent implements OnInit {
 
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
 
   public mas_vendidos : Array<any> = [];
   public producto_destacado_uno :any = null;

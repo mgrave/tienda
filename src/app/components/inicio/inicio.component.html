@@ -79,13 +79,13 @@
                                     {{producto_destacado_uno.producto.titulo}}
                                   </a>
                                   <p class="ps-product__price">
-                                      <ng-container *ngIf="currency != 'PEN'">
+                                      <ng-container *ngIf="currency != 'MXN'">
                                         <span class="text-danger mr-3" *ngIf="producto_destacado_uno.producto.precio_antes_dolares >= 1">
                                           <del>${{producto_destacado_uno.producto.precio_antes_dolares}}</del>
                                         </span>
                                         <span><b>${{producto_destacado_uno.producto.precio_dolar}}</b></span>
                                       </ng-container>
-                                      <ng-container *ngIf="currency == 'PEN'">
+                                      <ng-container *ngIf="currency == 'MXN'">
                                         <span class="text-danger mr-3" *ngIf="producto_destacado_uno.producto.precio_antes_soles >= 1">
                                           <del>S/{{producto_destacado_uno.producto.precio_antes_soles}}</del>
                                         </span>
@@ -105,13 +105,13 @@
                                     {{producto_destacado_dos.producto.titulo}}
                                   </a>
                                   <p class="ps-product__price" >
-                                      <ng-container *ngIf="currency != 'PEN'">
+                                      <ng-container *ngIf="currency != 'MXN'">
                                         <span class="text-danger mr-3" *ngIf="producto_destacado_dos.producto.precio_antes_dolares >= 1">
                                           <del>${{producto_destacado_dos.producto.precio_antes_dolares}}</del>
                                         </span>
                                         <span><b>${{producto_destacado_dos.producto.precio_dolar}}</b></span>
                                       </ng-container>
-                                      <ng-container *ngIf="currency == 'PEN'">
+                                      <ng-container *ngIf="currency == 'MXN'">
                                         <ng-container  *ngIf="producto_destacado_dos.producto">
                                           <span class="text-danger mr-3" *ngIf="producto_destacado_dos.producto.precio_antes_soles >= 1">
                                               <del>S/{{producto_destacado_dos.producto.precio_antes_soles}}</del>

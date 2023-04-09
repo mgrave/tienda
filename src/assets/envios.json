@@ -1,17 +1,17 @@
 [
     {
         "titulo": "Envio express",
-        "tiempo": "1 a 2 semanas",
-        "precio": 25
+        "tiempo": "menos de 24 horas",
+        "precio": 59
     },
     {
         "titulo": "Envio estandar",
-        "tiempo": "2 a 3 semanas",
-        "precio": 18
+        "tiempo": "menos de 48 horas",
+        "precio": 39
     },
     {
         "titulo": "Envio Gratis",
-        "tiempo": "1 mes",
+        "tiempo": "menos de 72 horas",
         "precio": 0
     }
 ]
