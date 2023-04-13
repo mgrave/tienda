@@ -34,7 +34,7 @@ export class CheckoutComponent implements OnInit {
 
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
 
   public regiones:Array<any> = [];
   public provincias:Array<any> = [];
@@ -213,7 +213,7 @@ export class CheckoutComponent implements OnInit {
     this.direccion.zona = str_select_pais[1];
     this.direccion.pais = pais;
 
-    if(pais == 'Perú'){
+    if(pais == 'Mexico'){
       setTimeout(() => {
         $('#sl-region').prop('disabled', false);
       }, 50);
@@ -373,7 +373,7 @@ export class CheckoutComponent implements OnInit {
       response=>{
         this.carrito_arr = response.data;
         this.carrito_arr.forEach(element => { 
-            if(this.currency != 'PEN'){
+            if(this.currency != 'MXN'){
               this.dventa.push({
                 producto: element.producto._id,
                 subtotal: element.producto.precio_dolar,
@@ -381,7 +381,7 @@ export class CheckoutComponent implements OnInit {
                 cantidad: element.cantidad,
                 cliente: localStorage.getItem('_id')
               });
-            }else if(this.currency == 'PEN'){
+            }else if(this.currency == 'MXN'){
               this.dventa.push({
                 producto: element.producto._id,
                 subtotal: element.producto.precio,
@@ -398,7 +398,7 @@ export class CheckoutComponent implements OnInit {
 
   calcular_carrito(){
     this.subtotal = 0;
-    if(this.currency == 'PEN'){
+    if(this.currency == 'MXN'){
       this.carrito_arr.forEach(element => {
           let sub_precio = parseInt(element.producto.precio) * element.cantidad;
           this.subtotal = this.subtotal + sub_precio;
@@ -417,7 +417,7 @@ export class CheckoutComponent implements OnInit {
   select_direccion_envio(item:any){
     this.envio_gratis = false;
     this.direccion_envio = item;
-    if(this.direccion_envio.pais != 'Perú'){
+    if(this.direccion_envio.pais != 'Mexico'){
       if(this.direccion_envio.zona == 'Zona 1'){
         this.envio = 12;
       }else if(this.direccion_envio.zona == 'Zona 2'){
@@ -435,12 +435,12 @@ export class CheckoutComponent implements OnInit {
       }
     }
 
-    if(this.currency == 'PEN'){
+    if(this.currency == 'MXN'){
       if(this.total_pagar >= this.config.monto_min_soles){
         this.envio = 0;
         this.envio_gratis = true;
       }
-    }else if(this.currency != 'PEN'){
+    }else if(this.currency != 'MXN'){
       if(this.total_pagar >= this.config.monto_min_dolares){
         this.envio = 0;
         this.envio_gratis = true;
@@ -453,7 +453,7 @@ export class CheckoutComponent implements OnInit {
       this.total_pagar = this.total_pagar_const +this.envio;
     }
 
-    if(this.currency != 'PEN'){
+    if(this.currency != 'MXN'){
       if(this.direccion_envio != undefined){
         if(this.carrito_arr.length >= 1){
           setTimeout(() => {
@@ -478,7 +478,7 @@ export class CheckoutComponent implements OnInit {
               title: element.producto.titulo,
               description: element.producto.descripcion,
               quantity: element.cantidad,
-              currency_id: 'PEN',
+              currency_id: 'MXN',
               unit_price: element.producto.precio
             });
           });
@@ -487,7 +487,7 @@ export class CheckoutComponent implements OnInit {
             title: 'Envio',
               description: 'Concepto de transporte y logistica',
               quantity: 1,
-              currency_id: 'PEN',
+              currency_id: 'MXN',
               unit_price: this.envio
           });
 
@@ -496,7 +496,7 @@ export class CheckoutComponent implements OnInit {
               title: 'Descuento',
                 description: 'Cupón aplicado ' + this.venta.cupon,
                 quantity: 1,
-                currency_id: 'PEN',
+                currency_id: 'MXN',
                 unit_price: -(this.descuento)
             });
           }
@@ -537,10 +537,10 @@ export class CheckoutComponent implements OnInit {
 
   generar_pedido(tipo:any){
     this.venta.transaccion = 'Venta pedido';
-    if(this.currency != 'PEN'){
+    if(this.currency != 'MXN'){
       this.venta.currency = 'USD';
     }else{
-      this.venta.currency = 'PEN';
+      this.venta.currency = 'MXN';
     }
     this.venta.subtotal = this.subtotal;
     this.venta.total_pagar = this.total_pagar;
@@ -592,7 +592,7 @@ export class CheckoutComponent implements OnInit {
               this.tipo_descuento =  response.data.tipo;
 
               if(response.data.disponibilidad == 'Exterior'){
-                if(this.currency != 'PEN'){
+                if(this.currency != 'MXN'){
                   if(response.data.tipo == 'Valor fijo'){
                     this.descuento = response.data.valor;
                     this.valor_descuento = this.descuento;
@@ -613,8 +613,8 @@ export class CheckoutComponent implements OnInit {
                       message: 'El cupón no es valido para tu país'
                   });
                 }
-              }else if(response.data.disponibilidad == 'Peru'){
-                if(this.currency == 'PEN'){
+              }else if(response.data.disponibilidad == 'Mexico'){
+                if(this.currency == 'MXN'){
                   if(response.data.tipo == 'Valor fijo'){
                     this.descuento = response.data.valor;
                     this.valor_descuento = this.descuento;

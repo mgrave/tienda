@@ -19,7 +19,7 @@ export class CarritoComponent implements OnInit {
 
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
   public token = localStorage.getItem('token')
 
   public user : any = undefined;
@@ -126,7 +126,7 @@ export class CarritoComponent implements OnInit {
   calcular_carrito(){
     this.subtotal = 0;
     if(this.user_lc != undefined){
-      if(this.currency == 'PEN'){
+      if(this.currency == 'MXN'){
         this.carrito_arr.forEach(element => {
             let sub_precio = parseInt(element.producto.precio) * element.cantidad;
             this.subtotal = this.subtotal + sub_precio;
@@ -138,7 +138,7 @@ export class CarritoComponent implements OnInit {
       });
       }
     }else if(this.user_lc == undefined){
-      if(this.currency == 'PEN'){
+      if(this.currency == 'MXN'){
         this.carrito_logout.forEach(element => {
           let sub_precio = parseInt(element.producto.precio) * element.cantidad;
             this.subtotal = this.subtotal + sub_precio;
@@ -160,11 +160,11 @@ export class CarritoComponent implements OnInit {
     if(this.carrito_logout.length >= 1){
       localStorage.setItem('cart',JSON.stringify(this.carrito_logout));
     }
-    if(this.currency == 'PEN'){
+    if(this.currency == 'MXN'){
       let monto = item.producto.precio*item.cantidad;
       this.subtotal = this.subtotal -monto;
    
-    } else if(this.currency != 'PEN'){
+    } else if(this.currency != 'MXN'){
       let monto = item.producto.precio_dolar*item.cantidad;
       this.subtotal = this.subtotal -monto;
     }

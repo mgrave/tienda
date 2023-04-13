@@ -180,12 +180,12 @@
         "price":     12
     },
     {
-        "country"  :     "Montserrat",
+        "country"  :     "Mexico",
         "zona"  :     "Zona 1",
-        "price":     12
+        "price":     0
     },
     {
-        "country"  :     "México",
+        "country"  :     "Montserrat",
         "zona"  :     "Zona 1",
         "price":     12
     },

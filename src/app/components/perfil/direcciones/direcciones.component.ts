@@ -12,7 +12,7 @@ export class DireccionesComponent implements OnInit {
 
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
 
   public token = localStorage.getItem('token');
   public direccion : any = {

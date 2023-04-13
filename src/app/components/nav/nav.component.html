@@ -6,7 +6,7 @@ background: #f1ee51;
 color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
     <div class="col-12 text-center">
         ENVIO GRATIS POR COMPRAS MAYORES A
-        <span *ngIf="currency == 'MXN'">S/{{config.monto_min_soles}}</span>
+        <span *ngIf="currency == 'MXN'">{{config.monto_min_soles}} PESOS</span>
         <span *ngIf="currency != 'MXN'">${{config.monto_min_dolares}}</span>
     </div>
 </div>
@@ -47,11 +47,11 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                 <li><a class="text-white" [routerLink]="['/contacto']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'menu.item_cuatro' | translate }}</a></li>
             </ul>
         </div>
-        <div class="header__container">
-          <div class="header__search">
-              <form class="ps-form--header-search" >
-                  <input id="input_search" class="form-control" type="text" placeholder="{{ 'menu.item_cinco' | translate }}" name="filtro_search" [(ngModel)]="filtro_search">
-                  <button type="button" (click)="search()" class="text-white"><i  class="icon-magnifier"></i></button>
+        <div class="header__container" >
+          <div class="header__search" >
+              <form class="ps-form--header-search">
+                  <input style="background: #ffffff !important;"  id="input_search" class="form-control" type="text" placeholder="{{ 'menu.item_cinco' | translate }}" name="filtro_search" [(ngModel)]="filtro_search">
+                  <button style="background: #eea6de !important;"  type="button" (click)="search()" class="text-white"><i  class="icon-magnifier"></i></button>
               </form>
               <a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a>
           </div>
@@ -133,17 +133,17 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                                   <p> Cantidad: {{item.cantidad}}</p>
                                   <p> Talla: {{item.variedad.variedad}}</p>
                                   <span class="ps-product__price">
-                                      <ng-container *ngIf="currency != 'PEN'">         
+                                      <ng-container *ngIf="currency != 'MXN'">         
                                         <span class=" mr-3"><b style="    color: #999ea9;">${{item.producto.precio_dolar}}</b></span>
                                         <span class="text-danger" *ngIf="item.producto.precio_antes_dolares >= 1">
                                           <del>${{item.producto.precio_antes_dolares}}</del>
                                         </span>
                                       </ng-container>
-                                      <ng-container *ngIf="currency == 'PEN'">
+                                      <ng-container *ngIf="currency == 'MXN'">
                                         
                                         <span class=" mr-3"><b style="    color: #999ea9;">S/{{item.producto.precio}}</b></span>
                                         <span class="text-danger" *ngIf="item.producto.precio_antes_soles >= 1">
-                                          <del>S/{{item.producto.precio_antes_soles}}</del>
+                                          <del>MXN {{item.producto.precio_antes_soles}} $</del>
                                         </span>
                                       </ng-container>
                                   </span>
@@ -167,7 +167,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                   <div class="ps-cart__footer">
                       <h3>Sub Total:<strong>
                           <span *ngIf="currency != 'MXN'">${{subtotal}}</span>
-                          <span *ngIf="currency == 'MXN'">S/{{subtotal}}</span>
+                          <span *ngIf="currency == 'MXN'">MXN {{subtotal}} $</span>
                       </strong></h3>
                         <figure  *ngIf="carrito_logout.length != 0">
                             <a class="ps-btn ps-btn--outline"  [routerLink]="['/carrito']">Carrito</a>
@@ -204,17 +204,17 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                                   <p> Cantidad: {{item.cantidad}}</p>
                                   <p> Talla: {{item.variedad.valor}}</p>
                                   <span class="ps-product__price">
-                                    <ng-container *ngIf="currency != 'PEN'">         
+                                    <ng-container *ngIf="currency != 'MXN'">         
                                         <span class=" mr-3"><b style="    color: #999ea9;">${{item.producto.precio_dolar}}</b></span>
                                         <span class="text-danger" *ngIf="item.producto.precio_antes_dolares >= 1">
                                           <del>${{item.producto.precio_antes_dolares}}</del>
                                         </span>
                                       </ng-container>
-                                      <ng-container *ngIf="currency == 'PEN'">
+                                      <ng-container *ngIf="currency == 'MXN'">
                                         
-                                        <span class=" mr-3"><b style="    color: #999ea9;">S/{{item.producto.precio}}</b></span>
+                                        <span class=" mr-3"><b style="    color: #999ea9;">MXN {{item.producto.precio}} $</b></span>
                                         <span class="text-danger" *ngIf="item.producto.precio_antes_soles >= 1">
-                                          <del>S/{{item.producto.precio_antes_soles}}</del>
+                                          <del>MXN {{item.producto.precio_antes_soles}} $</del>
                                         </span>
                                       </ng-container>
                                   </span>
@@ -236,8 +236,8 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                   
                   <div class="ps-cart__footer">
                       <h3>Sub Total:<strong>
-                          <span *ngIf="currency != 'PEN'">${{subtotal}}</span>
-                          <span *ngIf="currency == 'PEN'">S/{{subtotal}}</span>
+                          <span *ngIf="currency != 'MXN'">${{subtotal}}</span>
+                          <span *ngIf="currency == 'MXN'">MXN {{subtotal}} $</span>
                       </strong></h3>
                     
                       <figure *ngIf="carrito_arr.length != 0">

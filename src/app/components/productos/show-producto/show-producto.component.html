@@ -51,17 +51,17 @@
                 <h2 class="ps-product__title">{{producto.titulo}}</h2><span class="ps-product__sku">SKU: {{producto.sku.toUpperCase()}}</span>
                
                 <h4 class="ps-product__price sale">
-                  <ng-container *ngIf="currency != 'PEN'">
+                  <ng-container *ngIf="currency != 'MXN'">
                     <span class="text-danger mr-1" *ngIf="producto.precio_antes_dolares >= 1">
                       <del style="color: #ff0000 !important;">${{producto.precio_antes_dolares}}</del>
                     </span>
                     <span><b>${{producto.precio_dolar}}</b></span>
                   </ng-container>
-                  <ng-container *ngIf="currency == 'PEN'">
+                  <ng-container *ngIf="currency == 'MXN'">
                     <span class="text-danger mr-1" *ngIf="producto.precio_antes_soles >= 1">
                       <del style="color: #ff0000 !important;">S/{{producto.precio_antes_soles}}</del>
                     </span>
-                    <span><b>S/{{producto.precio}}</b></span>
+                    <span><b>MXN: {{producto.precio}}</b></span>
                   </ng-container>
                 </h4>
               </div>
@@ -224,17 +224,17 @@
                           <span><i class="text-warning fa fa-star"></i></span>
               </div>
               <p class="ps-product__price">
-                <ng-container *ngIf="currency != 'PEN'">
+                <ng-container *ngIf="currency != 'MXN'">
                     <span class="text-danger mr-3" *ngIf="item.precio_antes_dolares >= 1">
                       <del>${{item.precio_antes_dolares}}</del>
                     </span>
                     <span><b>${{item.precio_dolar}}</b></span>
                   </ng-container>
-                  <ng-container *ngIf="currency == 'PEN'">
+                  <ng-container *ngIf="currency == 'MXN'">
                     <span class="text-danger mr-3" *ngIf="item.precio_antes_soles >= 1">
-                      <del>S/{{item.precio_antes_soles}}</del>
+                      <del>MXN: {{item.precio_antes_soles}}</del>
                     </span>
-                    <span><b>S/{{item.precio}}</b></span>
+                    <span><b>MXN: {{item.precio}}</b></span>
                   </ng-container>
               </p>
             </div>

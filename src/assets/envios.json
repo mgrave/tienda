@@ -1,17 +1,17 @@
 [
     {
         "titulo": "Envio express",
-        "tiempo": "menos de 24 horas",
+        "tiempo": "en menos de 60 minutos",
         "precio": 59
     },
     {
         "titulo": "Envio estandar",
-        "tiempo": "menos de 48 horas",
+        "tiempo": "en el transcurso del día",
         "precio": 39
     },
     {
         "titulo": "Envio Gratis",
-        "tiempo": "menos de 72 horas",
+        "tiempo": "Un día despues de tu compra",
         "precio": 0
     }
 ]

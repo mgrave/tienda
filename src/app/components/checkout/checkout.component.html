@@ -28,10 +28,10 @@
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">Documento de Identidad
-                                        <span *ngIf="currency != 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency != 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <input *ngIf="currency == 'PEN'" type="text" required class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
-                                    <input *ngIf="currency != 'PEN'" type="text" class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
+                                    <input *ngIf="currency == 'MXN'" type="text"  class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
+                                    <input *ngIf="currency != 'MXN'" type="text" class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">Telefono</label>
@@ -43,11 +43,11 @@
                                     <select class="form-control" name="str_pais" required [(ngModel)]="str_pais" (change)="select_pais()">
                                         <option value="" selected disabled>Seleccionar</option>
                                         <ng-container *ngFor="let item of zonas">
-                                            <ng-container  *ngIf="currency =='PEN'">
-                                                <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country =='Perú'">{{item.country}}</option>
+                                            <ng-container  *ngIf="currency =='MXN'">
+                                                <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country =='Mexico'">{{item.country}}</option>
                                             </ng-container>
-                                            <ng-container  *ngIf="currency !='PEN'">
-                                                <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country !='Perú'">{{item.country}}</option>
+                                            <ng-container  *ngIf="currency !='MXN'">
+                                                <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country !='Mexico'">{{item.country}}</option>
                                             </ng-container>
                                            
                                         </ng-container>
@@ -62,18 +62,18 @@
 
                                 <div class="col-sm-12 form-group">
                                     <label for="ac-fn">Referencia
-                                        <span *ngIf="currency != 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency != 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <textarea *ngIf="currency == 'PEN'" type="text" required class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
-                                    <textarea *ngIf="currency != 'PEN'" type="text" class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
+                                    <textarea *ngIf="currency == 'MXN'" type="text" required class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
+                                    <textarea *ngIf="currency != 'MXN'" type="text" class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
                                 </div>
 
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">ZIP
-                                        <span *ngIf="currency == 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency == 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <input *ngIf="currency != 'PEN'" type="text" required class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
-                                    <input *ngIf="currency == 'PEN'" type="text" class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
+                                    <input *ngIf="currency != 'MXN'" type="text" required class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
+                                    <input *ngIf="currency == 'MXN'" type="text" class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
                                 </div>
                                 
                                
@@ -122,7 +122,7 @@
                                   <span class="d-block mb-3 font-size-sm text-muted">{{item.zip}}</span>
                           
                                   <div class="row">
-                                      <div class="col" *ngIf="item.pais == 'Perú'">
+                                      <div class="col" *ngIf="item.pais == 'Mexico'">
                                           <p>
                                               {{item.direccion}}
                                               <ng-container *ngIf="item.referencia">
@@ -137,7 +137,7 @@
                                             <span>{{item.provincia}}, {{item.distrito}}</span>
                                           </p>
                                       </div>
-                                      <div class="col" *ngIf="item.pais != 'Perú'">
+                                      <div class="col" *ngIf="item.pais != 'Mexico'">
                                           <p>
                                               {{item.direccion}}
                                           </p>
@@ -213,11 +213,11 @@
                                
 
                                 <small style="padding-top: 1rem;">
-                                    <ng-container *ngIf="currency != 'PEN'">
+                                    <ng-container *ngIf="currency != 'MXN'">
                                         ${{item.producto.precio_dolar*item.cantidad}}
                                     </ng-container>
-                                    <ng-container *ngIf="currency == 'PEN'">
-                                        S/{{item.producto.precio*item.cantidad}}
+                                    <ng-container *ngIf="currency == 'MXN'">
+                                        MXN {{item.producto.precio*item.cantidad}} $
                                     </ng-container>
                                 </small>
 
@@ -227,8 +227,8 @@
                         <figure>
                           <figcaption><strong>Subtotal</strong>
                             <small>
-                                <span *ngIf="currency != 'PEN'">${{subtotal}}</span>
-                                <span *ngIf="currency == 'PEN'">S/{{subtotal}}</span>
+                                <span *ngIf="currency != 'MXN'">${{subtotal}}</span>
+                                <span *ngIf="currency == 'MXN'">MXN {{subtotal}} $</span>
                             </small>
                         </figcaption>
                         </figure>
@@ -242,24 +242,24 @@
                                 <span *ngIf="!envio_gratis">Envio</span>
                                 <span *ngIf="envio_gratis" style="color: #127c5f;"><b>Envio gratis</b></span>
                                 <span>
-                                    <span *ngIf="currency != 'PEN'">${{envio}}</span>
-                                <span *ngIf="currency == 'PEN'">S/{{envio}}</span>
+                                    <span *ngIf="currency != 'MXN'">${{envio}}</span>
+                                <span *ngIf="currency == 'MXN'">MXN {{envio}} $</span>
                                 </span>
                             </figcaption>
                         </figure>
                         <figure class="ps-block__total">
                             <figcaption style="margin-top: 2rem;">Descuento
                                 <span>
-                                    <span *ngIf="currency != 'PEN'">- ${{descuento}}</span>
-                                <span *ngIf="currency == 'PEN'">- S/{{descuento}}</span>
+                                    <span *ngIf="currency != 'MXN'">- ${{descuento}}</span>
+                                <span *ngIf="currency == 'MXN'">- MXN {{descuento}} $</span>
                                 </span>
                             </figcaption>
                         </figure>
                         <figure class="ps-block__total">
                           <figcaption>Total
                               <span>
-                                <span *ngIf="currency != 'PEN'">${{total_pagar}}</span>
-                                <span *ngIf="currency == 'PEN'">S/{{total_pagar}}</span>
+                                <span *ngIf="currency != 'MXN'">${{total_pagar}}</span>
+                                <span *ngIf="currency == 'MXN'">MXN {{total_pagar}} $</span>
                               </span>
                             </figcaption>
                         </figure>
@@ -293,7 +293,7 @@
                       <div class="ps-block__footer">
                         <ng-container *ngIf="direccion_envio != undefined">
                             <ng-container *ngIf="carrito_arr.length >= 1">
-                              <ng-container *ngIf="currency == 'PEN'">
+                              <ng-container *ngIf="currency == 'MXN'">
                                 <div class="ps-block__bottom" *ngIf="metodo_pago == 'Tarjeta de crédito'">
                                   <a *ngIf="!btn_load" class="ps-btn ps-btn--black" id="btnBuy" style="cursor: pointer;" (click)="get_token_culqi()">Procesar pago</a>
                                   <button *ngIf="btn_load" class="ps-btn ps-btn--black btnBuy" style="cursor: pointer;" disabled>Procesando...</button>

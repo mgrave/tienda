@@ -39,17 +39,17 @@
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">Documento de Identidad
-                                        <span *ngIf="currency != 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency != 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <input *ngIf="currency == 'PEN'" type="text" required class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
-                                    <input *ngIf="currency != 'PEN'" type="text" class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Documento de Identidad">
+                                    <input *ngIf="currency == 'MXN'" type="text"  class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Opcional">
+                                    <input *ngIf="currency != 'MXN'" type="text" class="form-control form-control-lg" name="dni" [(ngModel)]="direccion.dni" placeholder="Opcional">
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">ZIP
-                                        <span *ngIf="currency == 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency == 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <input *ngIf="currency != 'PEN'" type="text" required class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
-                                    <input *ngIf="currency == 'PEN'" type="text" class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
+                                    <input *ngIf="currency != 'MXN'" type="text" required class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
+                                    <input *ngIf="currency == 'MXN'" type="text" class="form-control form-control-lg" name="zip" [(ngModel)]="direccion.zip" placeholder="Código postal">
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="ac-fn">Telefono</label>
@@ -61,10 +61,10 @@
                                 </div>
                                 <div class="col-sm-12 form-group">
                                     <label for="ac-fn">Referencia
-                                        <span *ngIf="currency != 'PEN'"> (Opcional)</span>
+                                        <span *ngIf="currency != 'MXN'"> (Opcional)</span>
                                     </label>
-                                    <textarea *ngIf="currency == 'PEN'" type="text" required class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
-                                    <textarea *ngIf="currency != 'PEN'" type="text" class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
+                                    <textarea *ngIf="currency == 'MXN'" type="text" required class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
+                                    <textarea *ngIf="currency != 'MXN'" type="text" class="form-control" placeholder="Referencia" name="referencia" [(ngModel)]="direccion.referencia" rows="2"></textarea>
                                 </div>
             
             
