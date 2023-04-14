@@ -133,9 +133,9 @@ export class CheckoutComponent implements OnInit {
 
     
 
-    setTimeout(() => {
-      $('.contpaypal').addClass('ocultar-paypal');
-    }, 150);
+    // setTimeout(() => {
+    //   $('.contpaypal').addClass('ocultar-paypal');
+    // }, 150);
     
 
     paypal.Buttons({
@@ -147,9 +147,9 @@ export class CheckoutComponent implements OnInit {
       createOrder: (data:any,actions:any)=>{
         return actions.order.create({
           purchase_units : [{
-            description : 'Pago en mi tienda',
+            description : 'Pago en nataliadelmar.com',
             amount : {
-              currency_code : 'USD',
+              currency_code : 'MXN',
               value: this.total_pagar
             },
           }]
@@ -516,7 +516,7 @@ export class CheckoutComponent implements OnInit {
           this._guestService.createToken(data).subscribe(
             response=>{
               console.log(response);
-             window.location.href =response.sandbox_init_point;
+            // window.location.href =response.sandbox_init_point;
               
             }
           );
