@@ -516,7 +516,7 @@ export class CheckoutComponent implements OnInit {
           this._guestService.createToken(data).subscribe(
             response=>{
               console.log(response);
-              window.location.href =response.sandbox_init_point;
+             window.location.href =response.sandbox_init_point;
               
             }
           );

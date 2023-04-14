@@ -264,19 +264,19 @@
                             </figcaption>
                         </figure>
                         <figure class="ps-block__payment-methods">
-                            <ng-container *ngIf="currency == 'PEN'">
+                            <ng-container *ngIf="currency == 'MXN'">
                                 <div class="ps-radio" style="display: flex; justify-content: space-between;">
                                     <input class="form-control" type="radio" id="shipping-3" name="metodo_pago" [(ngModel)]="metodo_pago" value="Tarjeta de crédito">
                                     <label for="shipping-3" class="text-muted"><b>Tarjeta de crédito</b></label>
 
                                     <img src="assets/img/payments.png" style="width: 130px;">
                                 </div>
-                                <div class="ps-radio">
+                                <!-- <div class="ps-radio">
                                     <input class="form-control" type="radio" id="shipping-1" name="metodo_pago" [(ngModel)]="metodo_pago" value="Yape o Plin">
                                     <label for="shipping-1" class="text-muted"><b>¡Paga al instante con Yape o Plin!</b></label>
 
                                     <p *ngIf="metodo_pago == 'Yape o Plin'" style="font-size: 13px;margin-bottom: 2.3rem;">(Luego de hacer click en "PROCESAR PEDIDO" podrás visualizar nuestros datos de pago).</p>
-                                </div>
+                                </div> -->
                                 <div class="ps-radio">
                                     <input class="form-control" type="radio" id="shipping-2" name="metodo_pago" [(ngModel)]="metodo_pago" value="Transferencia o Deposito">
                                     <label for="shipping-2" class="text-muted"><b>Transferencia o Deposito</b></label>

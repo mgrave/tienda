@@ -177,7 +177,7 @@ export class GuestService {
   obtenerPago(id:any):Observable<any>{
     let headers = new HttpHeaders()
     .set('Content-Type','application/json')
-    .set('Authorization','Bearer TEST-1565437970717712-100416-3da5767dad6b8dfef6c0563925dadf81-612621626');
+    .set('Authorization','Bearer TEST-7724557639383402-041320-4e2d72d301f102e8920b57687729ae60-526492484');
     return this._http.get('https://api.mercadopago.com/v1/payments/'+id,{headers:headers});
   }
 

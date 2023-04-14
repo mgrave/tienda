@@ -138,7 +138,7 @@
                           </select>
                       </div>
            
-                      <div class="form-group" *ngIf="direccion.pais == 'Perú'">
+                      <div class="form-group" *ngIf="direccion.pais == 'Mexico'">
                           
                           <select id="sl-region"  name="region" [(ngModel)]="direccion.region" class="form-control" disabled (change)="select_region()">
                               <option value="" selected disabled>Seleccionar</option>
@@ -149,8 +149,8 @@
                   </div>
                   <div class="ps-block__total">
                     <h3>Total
-                      <span *ngIf="currency != 'PEN'">${{total_pagar}}</span>
-                      <span *ngIf="currency == 'PEN'">S/{{total_pagar}}</span>
+                      <span *ngIf="currency != 'MXN'">${{total_pagar}}</span>
+                      <span *ngIf="currency == 'MXN'">MXN {{total_pagar}} $</span>
                     </h3>
                   </div>
                 </div>
@@ -282,13 +282,13 @@
                 <div class="ps-block__top">
                   <h4 style="margin-bottom: 20px !important;">Subtotal 
                           <span *ngIf="currency != 'MXN'">${{subtotal}}</span>
-                          <span *ngIf="currency == 'MXN'">S/{{subtotal}}</span>
+                          <span *ngIf="currency == 'MXN'">MXN {{subtotal}} $</span>
                   </h4>
   
                   <div class="ps-block__shipping">
                     <h4>Envio
                           <span *ngIf="currency != 'MXN'">${{precio_envio_dolares}}</span>
-                          <span *ngIf="currency == 'MXN'">S/{{precio_envio_soles}}</span>
+                          <span *ngIf="currency == 'MXN'">MXN {{precio_envio_soles}} $</span>
                     </h4>
                     <p>
                       <a class="ps-product__title" [routerLink]="['/politicas-envio']" >
@@ -305,10 +305,10 @@
                               <option value="" selected disabled>Seleccionar</option>
                               <ng-container *ngFor="let item of zonas">
                                   <ng-container  *ngIf="currency =='MXN'">
-                                      <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country =='Perú'">{{item.country}}</option>
+                                      <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country =='Mexico'">{{item.country}}</option>
                                   </ng-container>
                                   <ng-container  *ngIf="currency !='MXN'">
-                                      <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country !='Perú'">{{item.country}}</option>
+                                      <option value="{{item.country}}_{{item.zona}}" *ngIf="item.country !='Mexico'">{{item.country}}</option>
                                   </ng-container>
                               
                               </ng-container>

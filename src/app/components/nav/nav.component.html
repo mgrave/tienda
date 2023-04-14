@@ -84,7 +84,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
 </header>
 <header class="header header--mobile" data-sticky="true" >
     
-<div class="header__left"><a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active" ><img src="assets/img/logo-res.png" alt=""></a></div>
+<div class="header__left"><a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active" ><img src="assets/img/natalialogo.png" alt=""></a></div>
 <div class="header__right">
     <div class="header__actions">
             <ng-container *ngIf="user_lc != undefined">
@@ -141,7 +141,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                                       </ng-container>
                                       <ng-container *ngIf="currency == 'MXN'">
                                         
-                                        <span class=" mr-3"><b style="    color: #999ea9;">S/{{item.producto.precio}}</b></span>
+                                        <span class=" mr-3"><b style="    color: #999ea9;">MXN {{item.producto.precio}} $</b></span>
                                         <span class="text-danger" *ngIf="item.producto.precio_antes_soles >= 1">
                                           <del>MXN {{item.producto.precio_antes_soles}} $</del>
                                         </span>
@@ -263,8 +263,8 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                       </div>
                       <div class="col-6">
                           <ul class="ps-list">
-                              <li *ngIf="currency != 'PEN'" class="active"><a>USD</a></li>
-                              <li *ngIf="currency == 'PEN'" class="active"><a>PEN</a></li>
+                              <li *ngIf="currency != 'MXN'" class="active"><a>USD</a></li>
+                              <li *ngIf="currency == 'MXN'" class="active"><a>MXN</a></li>
                           </ul>
                       </div>
                   </div>
@@ -280,7 +280,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                       <li *ngIf="user_lc"><a (click)="logout()" >{{ 'menu.item_diez' | translate }}</a></li>
                   </ul>
                   <ul class="menu--mobile">
-                      <li><a  [routerLink]="['/']" >{{ 'menu.item_inicio' | translate }}</a></li>
+                      <li><a  [routerLink]="['/']" >{{ 'inicio' | translate }}</a></li>
                       <li class="menu-item-has-children has-mega-menu"><a  [routerLink]="['/productos']" routerLinkActive="router-link-active" >Shop</a><span class="sub-toggle"></span>
                           <div class="mega-menu">
                               <div class="mega-menu__column">
@@ -304,7 +304,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
               </div>
               <figure class="ps-navigation__bottom">
                   <figcaption>{{ 'menu.item_once' | translate }}</figcaption>
-                  <p>Ciudad, País contacto@domain.com <br> (+51) 987456321</p>
+                  <p>Ciudad, Tepic nataliadelmarshop@gmail.com </p>
               </figure>
           </nav>
       </div>

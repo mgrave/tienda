@@ -11,7 +11,7 @@ export class VerifyPagoComponent implements OnInit {
 
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
 
   public tipo = '';
   public cupon = '';
@@ -86,7 +86,7 @@ export class VerifyPagoComponent implements OnInit {
                           this.venta.direccion = this.direccion;
                           this.venta.cupon = this.cupon;
                           this.venta.transaccion = this.payment_id;
-                          this.venta.currency = 'PEN';
+                          this.venta.currency = 'MXN';
                           this.venta.subtotal = this.subtotal;
                           this.venta.total_pagar = this.total_pagar;
                           this.venta.envio_precio = this.envio;

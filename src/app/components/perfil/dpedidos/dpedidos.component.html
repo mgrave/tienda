@@ -36,16 +36,16 @@
                       <div class="row" *ngIf="orden.estado == 'En espera'">
                         <div class="col-12 mb-4" *ngIf="orden.metodo_pago == 'Transferencia o Deposito'">
                           <h4>¡Finaliza tu compra!</h4>
-                          <p style="font-size: 1.5rem;">Realiza el pago de tu pedido por {{orden.metodo_pago}}, y envíanos una imagen de la operación a nuestro número de <b style="color: #191919;">WhatsApp 987654321</b> para confirmar la compra y agendar el envío de tu pedido.</p>
+                          <p style="font-size: 1.5rem;">Realiza el pago de tu pedido por {{orden.metodo_pago}}, y envíanos una imagen de la operación a nuestro número de <b style="color: #191919;">WhatsApp 311-400-0046</b> para confirmar la compra y agendar el envío de tu pedido.</p>
 
-                          <p style="font-size: 1.5rem;">*Si te encuentras fuera de Lima y deseas realizar el pago vía Depósito, no olvides agregar S/7.50 de comisión bancaria al monto total de tu compra.</p>
+                          <!-- <p style="font-size: 1.5rem;">*Si te encuentras fuera de Tepic y deseas realizar el pago vía Depósito, no olvides agregar S/7.50 de comisión bancaria al monto total de tu compra.</p> -->
 
                           <h4>Datos de pago:</h4> 
                           <p>
-                            <b style="color: #191919;" style="font-size: 1.5rem;">Nro. de Cuenta Soles:</b> 878-654619584654-3 <br>
-                            <b style="color: #191919;" style="font-size: 1.5rem;">Código Interbancario:</b> 002-13245674987414654 <br>
-                            <b style="color: #191919;" style="font-size: 1.5rem;">Titular:</b> Grupo NTienda E.I.R.L. <br>
-                            <b style="color: #191919;" style="font-size: 1.5rem;">RUC:</b> 20000000001 <br>
+                            <b style="color: #191919;" style="font-size: 1.5rem;">Nro. de Cuenta BBVA:</b> 016-977-2499 <br>
+                            <b style="color: #191919;" style="font-size: 1.5rem;">Cuenta Clabe:</b> 012-854-0016-9772-2499-0 <br>
+                            <b style="color: #191919;" style="font-size: 1.5rem;">Titular:</b> Ramses Indalecio <br>
+                            <b style="color: #191919;" style="font-size: 1.5rem;">Código SWIFT: ("SOLO PARA TRANSFERENCIAS INTERNACIONALES")</b> BCMRMXMMPYM <br>
                           </p>
 
                           <p style="font-size: 1.5rem;">Realiza el pago en las próximas 24 horas. Pasadas las 24 horas, tu pedido será cancelado automáticamente.</p>
@@ -76,7 +76,7 @@
                                       <th class="border-0 py-2 pl-0">Envio:</th>
                                       <td class="border-0 py-2 px-0 text-muted">
                                         <span *ngIf="orden.currency== 'USD'">${{orden.envio_precio}}</span>
-                                        <span *ngIf="orden.currency== 'PEN'">S/{{orden.envio_precio}}</span>
+                                        <span *ngIf="orden.currency== 'MXN'">MXN {{orden.envio_precio}} $</span>
                                       </td>
                                     </tr>
                                     <tr>
@@ -232,7 +232,7 @@
                                       <div class="py-2">
                                         <div class="font-size-xs text-muted mb-1">Precio:</div>
                                         <div class="font-size-sm text-dark">
-                                          <span *ngIf="orden.currency == 'PEN'">S/{{item.subtotal}}</span>
+                                          <span *ngIf="orden.currency == 'MXN'">MXN {{item.subtotal}}$</span>
                                           <span  *ngIf="orden.currency == 'USD'">${{item.subtotal}}</span>
                                           
                                         </div>
@@ -248,7 +248,7 @@
                                       <div class="py-2 pr-3 text-right">
                                         <div class="font-size-xs text-muted mb-1">Subtotal:</div>
                                         <div class="font-size-sm font-weight-bold text-dark">
-                                          <span *ngIf="orden.currency == 'PEN'">S/{{item.subtotal*item.cantidad}}</span>
+                                          <span *ngIf="orden.currency == 'MXN'">MXN {{item.subtotal*item.cantidad}} $</span>
                                           <span  *ngIf="orden.currency == 'USD'">${{item.subtotal*item.cantidad}}</span>
                                           </div>
                                       </div>
@@ -260,7 +260,7 @@
                                     </td>
                                     <td class="" colspan="1">
                                       <div class="py-2 pr-3 text-right">
-                                        <span *ngIf="orden.currency == 'PEN'">S/{{orden.subtotal}}</span>
+                                        <span *ngIf="orden.currency == 'MXN'">MXN {{orden.subtotal}} $</span>
                                         <span  *ngIf="orden.currency == 'USD'">${{orden.subtotal}}</span>
                                       </div>  
                                     </td>
@@ -271,7 +271,7 @@
                                     </td>
                                     <td class="" colspan="1">
                                       <div class="py-2 pr-3 text-right">
-                                        <span *ngIf="orden.currency == 'PEN'">- S/{{orden.valor_descuento}}</span>
+                                        <span *ngIf="orden.currency == 'MXN'">- MXN {{orden.valor_descuento}} $</span>
                                         <span  *ngIf="orden.currency == 'USD'">- ${{orden.valor_descuento}}</span>
                                       </div>  
                                     </td>
@@ -282,7 +282,7 @@
                                     </td>
                                     <td class="" colspan="1">
                                       <div class="py-2 pr-3 text-right">
-                                        <span *ngIf="orden.currency == 'PEN'">S/{{orden.envio_precio}}</span>
+                                        <span *ngIf="orden.currency == 'MXN'">MXN {{orden.envio_precio}} $</span>
                                         <span  *ngIf="orden.currency == 'USD'">${{orden.envio_precio}}</span>
                                       </div>  
                                     </td>
@@ -293,7 +293,7 @@
                                     </td>
                                     <td class="" colspan="1">
                                       <div  class="py-2 pr-3 text-right">
-                                        <span *ngIf="orden.currency == 'PEN'">S/{{orden.total_pagar}}</span>
+                                        <span *ngIf="orden.currency == 'MXN'">MXN {{orden.total_pagar}} $</span>
                                         <span  *ngIf="orden.currency == 'USD'">${{orden.total_pagar}}</span>
                                       </div>
                                     </td>
