@@ -427,11 +427,11 @@ export class CheckoutComponent implements OnInit {
       }else if(this.direccion_envio.zona == 'Zona 4'){
         this.envio = 35;
       }
-    }else if(this.direccion_envio.pais == 'Perú'){
-      if(this.direccion_envio.region == 'Lima'){
-        this.envio = 10;
-      }else if(this.direccion_envio.region != 'Lima'){
-        this.envio = 15;
+    }else if(this.direccion_envio.pais == 'Mexico'){
+      if(this.direccion_envio.region == 'Nayarit'){
+        this.envio = 50;
+      }else if(this.direccion_envio.region != 'Nayarit'){
+        this.envio = 50;
       }
     }
 

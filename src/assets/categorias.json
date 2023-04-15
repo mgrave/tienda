@@ -40,9 +40,44 @@
         "_id": "1003"
     },
     {
-        "titulo":"Packs",
-        "slug":"packs",
+        "titulo":"Vestidos",
+        "slug":"vestidos",
         "_id": "1008"
+    },
+    {
+        "titulo":"Blusas",
+        "slug":"blusas",
+        "_id": "1009"
+    },
+    {
+        "titulo":"Faldas",
+        "slug":"faldas",
+        "_id": "1010"
+    },
+    {
+        "titulo":"Pantalones",
+        "slug":"pantalones",
+        "_id": "1011"
+    },
+    {
+        "titulo":"Chamarras",
+        "slug":"chamarras",
+        "_id": "1012"
+    },
+    {
+        "titulo":"Pijamas",
+        "slug":"pijamas",
+        "_id": "1013"
+    },
+    {
+        "titulo":"Disfraces",
+        "slug":"disfraces",
+        "_id": "1014"
+    },
+    {
+        "titulo":"Sudaderas",
+        "slug":"sudaderas",
+        "_id": "1015"
     }
     
 ]

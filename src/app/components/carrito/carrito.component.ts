@@ -231,10 +231,10 @@ export class CarritoComponent implements OnInit {
     this.direccion.distrito = '';
     console.log(this.direccion.region);
     
-    if(this.direccion.region == 15){
-      this.precio_envio_soles = 10;
-    }else if(this.direccion.region != 15){
-      this.precio_envio_soles = 15;
+    if(this.direccion.region == 49){
+      this.precio_envio_soles = 50;
+    }else if(this.direccion.region != 49){
+      this.precio_envio_soles = 50;
     }
     this.total_pagar = this.subtotal_const + this.precio_envio_soles;
     
