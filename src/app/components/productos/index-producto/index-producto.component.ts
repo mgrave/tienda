@@ -18,7 +18,7 @@ export class IndexProductoComponent implements OnInit {
   //GEO
   public geo : any = {};
   public country = '';
-  public currency = 'PEN';
+  public currency = 'MXN';
   public user_lc : any = undefined;
 
   public token :any = '';

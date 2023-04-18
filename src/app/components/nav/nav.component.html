@@ -15,7 +15,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
     <div class="header__left">
         <a class="ps-logo" [routerLink]="['/']" routerLinkActive="router-link-active">
         
-            <img src="https://res.cloudinary.com/dmuoqsv3b/image/upload/v1681058199/PhotoRoom-20230409_093218_bimuo4.png" alt="" style="width:150px;">
+            <img src="https://res.cloudinary.com/dmuoqsv3b/image/upload/v1681703916/logo-ftransparente_x5lmat.png" alt="" style="width:150px;">
         </a>
     </div>
     <div class="header__right">
@@ -39,8 +39,8 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
                   <ul class="sub-menu">
                       <li>
                           <a [routerLink]="['/nosotros']">{{ 'menu.item_siete' | translate }}</a>
-                          <a [routerLink]="['/impacto-social']">{{ 'menu.item_ocho' | translate }}</a>
-                          <a [routerLink]="['/embajadoras']" >{{ 'menu.item_nueve' | translate }}</a>
+                          <!-- <a [routerLink]="['/impacto-social']">{{ 'menu.item_ocho' | translate }}</a>
+                          <a [routerLink]="['/embajadoras']" >{{ 'menu.item_nueve' | translate }}</a> -->
                       </li>
                   </ul>
               </li>
@@ -51,7 +51,7 @@ color:#191919" *ngIf="config.envio_activacion != 'Desactivado'">
           <div class="header__search" >
               <form class="ps-form--header-search">
                   <input style="background: #ffffff !important;"  id="input_search" class="form-control" type="text" placeholder="{{ 'menu.item_cinco' | translate }}" name="filtro_search" [(ngModel)]="filtro_search">
-                  <button style="background: #eea6de !important;"  type="button" (click)="search()" class="text-white"><i  class="icon-magnifier"></i></button>
+                  <button style="background: #ffffff !important;"  type="button" (click)="search()" class="text-white"><i  class="icon-magnifier"></i></button>
               </form>
               <a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a>
           </div>
