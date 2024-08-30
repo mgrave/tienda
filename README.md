@@ -1,3 +1,11 @@
+# Docker Commands
+
+docker build -t tienda .
+docker run -p 4000:4200 tienda
+
+# Access
+admin@gmail.com:admin
+
 # Tienda
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.

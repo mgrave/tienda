@@ -1,4 +1,4 @@
 export var GLOBAL = {
-    url: 'http://127.0.0.1:4202/api/',
-    socket: 'http://localhost:4202'
+    url: 'http://localhost:5000/api/',
+    socket: 'http://localhost:5000'
 }
